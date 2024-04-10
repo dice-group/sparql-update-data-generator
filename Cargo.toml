@@ -1,0 +1,17 @@
+[package]
+name = "sparql-update-data-generator"
+version = "0.1.0"
+edition = "2021"
+authors = ["Dice Group"]
+description = "Compress n-triple datasets and generate SPARQL update DATA queries from their compressed versions."
+
+[dependencies]
+clap = { version = "3.2.16", features = ["derive"] }
+rand = { version = "0.8.5", features = ["small_rng"] }
+ahash = { version = "0.8.11", default-features = false } # do not enable std feature as hashes will be different between program executions
+walkdir = "2.3.2"
+memory_mapped = { git = "https://github.com/Clueliss/memory-mapped", rev = "66f0dfb" }
+rayon = "1.5.3"
+thiserror = "1.0.58"
+rio_turtle = "0.8.4"
+rio_api = "0.8.4"
